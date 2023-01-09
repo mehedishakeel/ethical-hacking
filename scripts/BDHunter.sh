@@ -38,8 +38,11 @@ install() {
   # install Go language
   apt install -y golang
 
-  # install Python
+  # install Python language
   apt install -y python3
+  
+  # install Ruby language
+  apt install -y ruby-full
 
   # install Aircrack-ng suite
   apt install -y aircrack-ng
@@ -51,7 +54,7 @@ install() {
   apt install -y nmap
 
   # install WPScan
-  apt install -y wpscan
+  gem install wpscan
 
   # install Sqlmap
   apt install -y sqlmap 

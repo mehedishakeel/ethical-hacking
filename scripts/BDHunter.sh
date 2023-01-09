@@ -45,7 +45,7 @@ install() {
   apt install -y aircrack-ng
 
   # install Wifite
-  apt install wifite -y
+  apt install -y wifite
 
   # install Nmap
   apt install -y nmap

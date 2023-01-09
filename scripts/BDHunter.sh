@@ -74,7 +74,11 @@ install() {
   chmod +x findomain
   sudo mv findomain /usr/bin/findomain
 
-  # install Go tools
+  # install Go tools & set environment variables
+  sudo echo "export GOPATH=$HOME/go" >> ~/.bashrc
+  sudo echo "export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin" >> ~/.bashrc
+  sudo source ~/.bashrc
+  cd
   go install -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest
   go install -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei@latest
   go install -v github.com/projectdiscovery/httpx/cmd/httpx@latest
@@ -85,16 +89,11 @@ install() {
   go install github.com/tomnomnom/waybackurls@latest
   go install -v github.com/lukasikic/subzy@latest
  
-
   # install Seclists wordlists
   git clone https://github.com/danielmiessler/SecLists.git /opt/SecLists
   chmod -R 755 /opt/SecLists
   chown -R $USER:$USER /opt/SecLists
 
-  # set environment variables
-  sudo echo "export GOPATH=$HOME/go" >> ~/.bashrc
-  sudo echo "export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin" >> ~/.bashrc
-  sudo source ~/.bashrc
 }
 
 case "$1" in

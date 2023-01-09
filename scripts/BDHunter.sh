@@ -36,7 +36,7 @@ install() {
   apt install -y curl
 
   # install Go language
-  apt install -y golang -y
+  apt install -y golang
 
   # install Python
   apt install -y python3
@@ -63,7 +63,7 @@ install() {
   apt install -y dirsearch
 
   # install Sqlmap
-  apt-get install sqlmap -y
+  apt install -y sqlmap
 
   #install Findomain
   curl -LO https://github.com/findomain/findomain/releases/latest/download/findomain-linux-i386.zip
@@ -73,6 +73,7 @@ install() {
 
   # install Go tools
   go install -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest
+  go install -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei@latest
   go install -v github.com/projectdiscovery/httpx/cmd/httpx@latest
   go install -v github.com/OWASP/Amass/v3/...@master
   go install github.com/ffuf/ffuf@latest

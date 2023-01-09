@@ -92,9 +92,9 @@ install() {
   chown -R $USER:$USER /opt/SecLists
 
   # set environment variables
-  echo "export GOPATH=$HOME/go" >> ~/.bashrc
-  echo "export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin" >> ~/.bashrc
-  source ~/.bashrc
+  sudo echo "export GOPATH=$HOME/go" >> ~/.bashrc
+  sudo echo "export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin" >> ~/.bashrc
+  sudo source ~/.bashrc
 }
 
 case "$1" in
